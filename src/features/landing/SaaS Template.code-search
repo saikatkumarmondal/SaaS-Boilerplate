@@ -1,0 +1,92 @@
+# Query: SaaS Template
+# ContextLines: 1
+
+22 results - 7 files
+
+README.md:
+    3  <p align="center">
+    4:   <a href="https://react-saas.com"><img height="300" src="public/assets/images/nextjs-starter-banner.png?raw=true" alt="Next.js SaaS Template"></a>
+    5  </p>
+    6  
+    7: 🚀 **SaaS Boilerplate** is a powerful and fully customizable template to kickstart your SaaS applications. Built with **Next.js** and **Tailwind CSS**, and the modular UI components of **Shadcn UI**. This **Next.js SaaS Template** helps you to quickly build and launch SaaS with minimal effort.
+    8  
+    9: ⟪ 292 characters skipped ⟫js/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo), Testing, Deployment, Monitoring, and **User Impersonation**, this SaaS template provides everything you need to get started.
+   10  
+
+   12  
+   13: Whether you're building a new SaaS app or looking for a flexible, **production-ready SaaS template**, this boilerplate has you covered. This free, open-source starter kit has everything you need to accelerate your development and scale your product with ease.
+   14  
+
+  434  
+  435: Next.js SaaS Template relies on [Codecov](https://about.codecov.io/codecov-free-trial/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo) for code coverage reporting solution. To enable Codecov, create a Codecov account and connect it to your GitHub account. Your repositories should appear on your Codecov dashboard. Select the desired repository and copy the token. In GitHub Actions, define the `CODECOV_TOKEN` environment variable and paste the token.
+  436  
+
+src\locales\en.json:
+   2    "Index": {
+   3:     "meta_title": "SaaS Template - The perfect SaaS template to build and scale your business with ease.",
+   4      "meta_description": "A free and open-source landing page template for your SaaS business, built with React, TypeScript, Shadcn UI, and Tailwind CSS."
+
+  16      "follow_twitter": "Follow @Ixartz on Twitter",
+  17:     "title": "The perfect <important>SaaS template</important> to build and scale your business with ease.",
+  18      "description": "A free and open-source landing page template for your SaaS business, built with React, TypeScript, Shadcn UI, and Tailwind CSS.",
+
+  26      "section_subtitle": "Features",
+  27:     "section_title": "Unlock the Full Potential of the SaaS Template",
+  28      "section_description": "A free and open-source landing page template for your SaaS business, built with React, TypeScript, Shadcn UI, and Tailwind CSS.",
+
+  38      "section_subtitle": "Features",
+  39:     "section_title": "Unlock the Full Potential of the SaaS Template",
+  40      "section_description": "A free and open-source landing page template for your SaaS business, built with React, TypeScript, Shadcn UI, and Tailwind CSS.",
+
+  96    "Dashboard": {
+  97:     "meta_title": "SaaS Template Dashboard",
+  98      "meta_description": "A free and open-source landing page template for your SaaS business, built with Next.js, TypeScript, Shadcn UI, and Tailwind CSS."
+
+src\locales\fr.json:
+   2    "Index": {
+   3:     "meta_title": "SaaS Template - Le template SaaS parfait pour construire et mettre à l'échelle votre entreprise en toute simplicité.",
+   4      "meta_description": "Un template gratuit et open-source de landing page pour votre entreprise SaaS, construit avec React, TypeScript, Shadcn UI et Tailwind CSS."
+
+  16      "follow_twitter": "Suivez @Ixartz sur Twitter",
+  17:     "title": "Le parfait <important>SaaS template</important> pour construire et mettre à l'échelle votre entreprise en toute simplicité.",
+  18      "description": "Un template gratuit et open-source de landing page pour votre entreprise SaaS, construit avec React, TypeScript, Shadcn UI et Tailwind CSS.",
+
+  26      "section_subtitle": "Fonctionnalités",
+  27:     "section_title": "Débloquer le plein potentiel du SaaS Template",
+  28      "section_description": "Un template gratuit et open-source de landing page pour votre entreprise SaaS, construit avec React, TypeScript, Shadcn UI et Tailwind CSS.",
+
+  38      "section_subtitle": "Fonctionnalités",
+  39:     "section_title": "Débloquer le plein potentiel du SaaS Template",
+  40      "section_description": "Un template gratuit et open-source de landing page pour votre entreprise SaaS, construit avec React, TypeScript, Shadcn UI et Tailwind CSS.",
+
+  96    "Dashboard": {
+  97:     "meta_title": "Tableau de bord du SaaS Template",
+  98      "meta_description": "Un template gratuit et open-source de landing page pour votre entreprise SaaS, construit avec Next.js, TypeScript, Shadcn UI et Tailwind CSS."
+
+src\utils\AppConfig.ts:
+  8  export const AppConfig = {
+  9:   name: 'Facebook Autopilot',
+  10    locales: [
+
+tests\e2e\I18n.e2e.ts:
+   7  
+   8:       await expect(page.getByText('The perfect SaaS template to build')).toBeVisible();
+   9  
+
+  12  
+  13:       await expect(page.getByText('Le parfait SaaS template pour construire')).toBeVisible();
+  14      });
+
+tests\e2e\Sanity.check.e2e.ts:
+  19  
+  20:       await expect(page.getByText('The perfect SaaS template to build')).toBeVisible();
+  21      });
+
+tests\e2e\Visual.e2e.ts:
+   8  
+   9:       await expect(page.getByText('The perfect SaaS template to build')).toBeVisible();
+  10  
+
+  16  
+  17:       await expect(page.getByText('Le parfait SaaS template pour construire')).toBeVisible();
+  18  
