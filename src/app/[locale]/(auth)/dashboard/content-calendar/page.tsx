@@ -1,10 +1,15 @@
-import { CalendarGrid } from '@/features/content-calendar/components/CalendarGrid';
+'use client';
 
-export default function ContentCalendarPage() {
+import PostSchedulingCard from '@/features/dashboard/PostSchedulingCard';
+
+export default function PostSchedulingPage() {
   return (
     <div className="p-6">
-      <h1 className="mb-6 text-2xl font-semibold">Content Calendar</h1>
-      <CalendarGrid />
+      <h1 className="mb-6 text-2xl font-semibold">
+        Post Scheduling
+      </h1>
+      <PostSchedulingCard />
+
     </div>
   );
 }
