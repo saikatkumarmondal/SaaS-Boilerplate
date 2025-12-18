@@ -4,6 +4,7 @@ import { enUS, frFR } from '@clerk/localizations';
 import { ClerkProvider } from '@clerk/nextjs';
 
 import { AppConfig } from '@/utils/AppConfig';
+import {ReduxProvider} from "@/app/providers";
 
 export default function AuthLayout(props: {
   children: React.ReactNode;
@@ -36,7 +37,9 @@ export default function AuthLayout(props: {
       signUpFallbackRedirectUrl={dashboardUrl}
       afterSignOutUrl={afterSignOutUrl}
     >
-      {props.children}
+      <ReduxProvider>
+        {props.children}
+      </ReduxProvider>
     </ClerkProvider>
   );
 }

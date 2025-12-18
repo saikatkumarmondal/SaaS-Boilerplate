@@ -1,46 +1,66 @@
-import { Facebook, Image as ImageIcon, Instagram, MoreVertical } from 'lucide-react';
-import React from 'react';
+'use client';
+
+import { useRouter } from 'next/navigation';
+
+import PostSchedulingCard from '@/features/dashboard/PostSchedulingCard';
+
+const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const DAYS_IN_MONTH = Array.from({ length: 30 }, (_, i) => i + 1);
+const FIRST_DAY_INDEX = 3;
 
 export default function PostSchedulingPage() {
+  const router = useRouter();
+  const emptyCells = Array.from({ length: FIRST_DAY_INDEX });
+
   return (
-    <div className="p-6">
-      {/* Post Card */}
-      <div className="w-80 space-y-3 rounded-2xl border bg-white p-4 shadow-sm">
+    <div className="min-h-screen bg-gray-50 p-8">
+      <h1 className="mb-6 text-2xl font-bold text-gray-800">Post Scheduling</h1>
 
-        {/* Header */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="size-2 rounded-full bg-red-500" />
-            <div className="h-2 w-24 rounded bg-gray-300" />
-          </div>
-          <MoreVertical className="size-4 text-gray-500" />
+      <div className="rounded-xl border border-gray-200 bg-white shadow-sm">
+        {/* Weekday Headers */}
+        <div className="grid grid-cols-7 border-b bg-gray-50/50">
+          {DAYS.map(day => (
+            <div key={day} className="border-r border-gray-200 p-3 text-center text-xs font-bold uppercase tracking-wider text-gray-500 last:border-r-0">
+              {day}
+            </div>
+          ))}
         </div>
 
-        {/* Content lines */}
-        <div className="space-y-2">
-          <div className="h-3 w-full rounded bg-gray-300" />
-          <div className="h-3 w-2/3 rounded bg-gray-200" />
-        </div>
+        {/* Calendar Grid */}
+        <div className="grid auto-rows-[160px] grid-cols-7">
+          {emptyCells.map((_, idx) => (
+            <div key={`empty-${idx}`} className="border-b border-r border-gray-100 bg-gray-50/30" />
+          ))}
 
-        {/* Image placeholder */}
-        <div className="flex h-20 items-center justify-center rounded-xl bg-gray-100">
-          <ImageIcon className="size-6 text-gray-400" />
-        </div>
+          {DAYS_IN_MONTH.map(day => (
+            <div
+              key={day}
+              // Removed overflow-hidden so the card can grow outside this box
+              className="group relative flex flex-col border-b border-r border-gray-100 p-3 transition-colors hover:bg-gray-50/50"
+            >
+              <div className="mb-2 text-sm font-medium text-gray-600">{day}</div>
 
-        {/* Social icons */}
-        <div className="flex items-center gap-3">
-          <div className="flex size-8 items-center justify-center rounded-full bg-blue-600 text-white">
-            <Facebook size={16} />
-          </div>
-          <div className="flex size-8 items-center justify-center rounded-full bg-pink-500 text-white">
-            <Instagram size={16} />
-          </div>
-        </div>
+              <div className="flex flex-1 items-center justify-start">
+                {' '}
+                {/* Align start for left-to-right growth */}
+                <div
 
-        {/* Action buttons */}
-        <div className="flex gap-3">
-          <button className="h-2 flex-1 rounded-full bg-orange-400" />
-          <button className="h-2 flex-1 rounded-full bg-yellow-400" />
+                  className="
+                    /* Base State */ /* Hover
+                    State */ relative z-10
+                    origin-left scale-[0.6]
+                    cursor-pointer transition-all duration-300 ease-in-out
+                    hover:z-[100]
+                    hover:translate-x-10
+                    hover:scale-[2]
+                    hover:shadow-2xl
+                  "
+                >
+                  <PostSchedulingCard />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

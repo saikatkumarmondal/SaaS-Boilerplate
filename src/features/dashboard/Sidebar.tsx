@@ -21,7 +21,11 @@ export const Sidebar = () => {
           </ActiveLink>
 
           <ActiveLink href="/dashboard/post-scheduling">
-            Post Scheduling
+            Post Scheduling (For Month)
+          </ActiveLink>
+
+          <ActiveLink href="/dashboard/post-scheduling-week">
+            Post Scheduling (For Week)
           </ActiveLink>
 
         </nav>
